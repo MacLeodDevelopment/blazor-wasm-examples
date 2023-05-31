@@ -1,0 +1,11 @@
+﻿@using Blazor.Wasm.Examples.Components.CascadingParameters.Grandchild
+
+@inherits ChildComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Child</h3>
+        <p>@DataCascadedFromParent (rendered by the CHILD Component).</p>
+        <Grandchild></Grandchild>
+    </div>
+</div>

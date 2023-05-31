@@ -1,0 +1,24 @@
+﻿@inherits MistakeComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Mistake</h3>
+        
+        <h4 class="card-subtitle mb-2">Value from state: <em>@ComplexObjectCascadedFromParent?.Data</em></h4>
+
+        <p>A common mistake is to attempt to alter the reference variable from a descendant component.
+            This component demonstrates this. 
+    
+            Clicking the correct button will alter the state in the parent correctly and cascade to all instances where it is used, 
+            <strong>once StateHasChanged has been invoked in the parent component</strong>.
+    
+            Clicking the incorrect button will alter the state in this component only, and when StateHasChanged is invoked in the parent,
+            the state will be updated to whatever the state is in the parent. i.e. The state in this component has become detached from the
+            parent. 
+        </p>
+
+        <button @onclick="Correct" class="btn btn-success">Do it Correctly</button>
+        <button @onclick="Incorrect" class="btn btn-danger">Do it Incorrectly</button>
+    </div>
+</div>
+

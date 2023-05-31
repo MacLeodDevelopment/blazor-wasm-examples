@@ -1,0 +1,28 @@
+﻿@using Blazor.Wasm.Examples.Components.CascadingParameters.Child
+@using Blazor.Wasm.Examples.Components.CascadingParameters.Mistake
+@using Blazor.Wasm.Examples.Components.CascadingParameters.Sibling
+@inherits ParentComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Parent</h3>
+        <p>@ParentData (rendered by the PARENT Component).</p>
+        <CascadingValue Name="DataFromParent" Value="ParentData">
+            <CascadingValue Name="ComplexObjectFromParent" Value="ParentComplexObject">
+                <Child></Child>
+                <Sibling></Sibling>
+
+                <div class="card-body">
+                    <button @onclick="StateHasChanged" type="button" class="btn btn-primary">
+                        Invoke StateHasChanged From the Parent Component
+                    </button>
+                </div>
+
+                <Mistake></Mistake>
+                <Mistake></Mistake>
+            </CascadingValue>
+        </CascadingValue>
+
+    </div>
+</div>
+
