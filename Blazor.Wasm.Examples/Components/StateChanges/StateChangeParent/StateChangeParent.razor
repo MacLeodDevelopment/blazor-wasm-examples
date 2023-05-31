@@ -1,0 +1,25 @@
+﻿@using Blazor.Wasm.Examples.Components.StateChanges.StateChangeChild;
+
+@inherits StateChangeParentComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">State Change Parent</h3>
+
+        <CascadingValue Name="ParentComponent" Value="this">
+            <CascadingValue Name="ComplexObjectFromParent" Value="ParentComplexObject">
+
+                <StateChangeChild></StateChangeChild>
+
+                <div class="card-body">
+                    <button @onclick="ModifyCascadingParameterFromParentAsync" type="button" class="btn btn-primary">
+                        Modify the Cascading Parameter from the Parent Component
+                    </button>
+                </div>
+
+            </CascadingValue>
+        </CascadingValue>
+
+    </div>
+</div>
+

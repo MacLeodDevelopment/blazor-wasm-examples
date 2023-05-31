@@ -1,0 +1,26 @@
+﻿@using Blazor.Wasm.Examples.Components.Parameters.ParameterChild
+@using Blazor.Wasm.Examples.Components.Parameters.ParameterMistake
+
+@inherits ParameterParentComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Parameter Parent</h3>
+        
+        <ParameterChild
+            RequiredInputParameter="This value is passed in from the parent."
+            AnyCustomHtml5Attribute="The child has a catchall mechanism for any parameters which are passed as attributes.">
+        </ParameterChild>
+        
+        <div class="card-body">
+            <button @onclick="StateHasChanged" type="button" class="btn btn-primary">
+                Invoke StateHasChanged From the Parent Component
+            </button>
+        </div>
+        
+        <ParameterMistake ComplexObjectPassedFromParent="ParentComplexObject"></ParameterMistake>
+        <ParameterMistake ComplexObjectPassedFromParent="ParentComplexObject"></ParameterMistake>
+        
+    </div>
+</div>
+

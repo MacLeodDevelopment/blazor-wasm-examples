@@ -1,27 +1,26 @@
 ﻿using Blazor.Wasm.Examples.Domain;
 using Microsoft.AspNetCore.Components;
 
-namespace Blazor.Wasm.Examples.Components.CascadingParameters.Mistake
+namespace Blazor.Wasm.Examples.Components.CascadingParameters.Mistake;
+
+public class MistakeComponent : ComponentBase
 {
-    public class MistakeComponent : ComponentBase
+    [CascadingParameter(Name = "ComplexObjectFromParent")]
+    public ComplexObject? ComplexObjectCascadedFromParent { get; set; }
+
+    protected void Correct()
     {
-        [CascadingParameter(Name = "ComplexObjectFromParent")]
-        public ComplexObject? ComplexObjectCascadedFromParent { get; set; }
-
-        protected void Correct()
+        if (ComplexObjectCascadedFromParent != null)
         {
-            if (ComplexObjectCascadedFromParent != null)
-            {
-                ComplexObjectCascadedFromParent.Data = "Value changed correctly.";
-            }
+            ComplexObjectCascadedFromParent.Data = "Value changed correctly.";
         }
+    }
 
-        protected void Incorrect()
+    protected void Incorrect()
+    {
+        ComplexObjectCascadedFromParent = new ComplexObject
         {
-            ComplexObjectCascadedFromParent = new ComplexObject
-            {
-                Data = "Reference changed - incorrect - as it will only update the object used in this component."
-            };
-        }
+            Data = "Reference changed - incorrect - as it will only update the object used in this component."
+        };
     }
 }

@@ -1,0 +1,14 @@
+﻿
+@inherits StateChangeChildComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">State Change Child</h3>
+        <p>@DataCascadedFromParent?.Data (rendered by the CHILD Component).</p>
+        
+        <button @onclick="ModifyCascadingParameterFromChildAsync" type="button" class="btn btn-primary">
+                Modify the Cascading Parameter from the CHILD Component
+        </button>
+
+    </div>
+</div>

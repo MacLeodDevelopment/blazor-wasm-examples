@@ -1,0 +1,23 @@
+﻿@page "/state-changes"
+@using Blazor.Wasm.Examples.Components.StateChanges.StateChangeParent
+
+<PageTitle>State Changes</PageTitle>
+
+<h1>State Changes</h1>
+
+<p>
+    This page demonstrates how component state (cascading parameters) is updated. 
+    <ul>
+        <li>
+            Changes to state from a PARENT component will cause the child to be re-rendered automatically.
+        </li>
+        <li>
+            Changes to state from a CHILD component will NOT cause the parent to be re-rendered automatically.
+        </li>
+    </ul>
+
+</p>
+
+<hr/>
+
+<StateChangeParent></StateChangeParent>
