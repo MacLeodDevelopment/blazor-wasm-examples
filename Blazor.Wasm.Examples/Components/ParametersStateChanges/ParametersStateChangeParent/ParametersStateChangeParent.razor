@@ -1,6 +1,7 @@
 ﻿@inherits ParametersStateChangeParentComponent 
 @using Blazor.Wasm.Examples.Components.ParametersStateChanges.ParametersStateChangeChild 
 @using Blazor.Wasm.Examples.Components.ParametersStateChanges.ChildWithEventCallback
+@using Blazor.Wasm.Examples.Components.ParametersStateChanges.ChildWithBind
 
 <div class="card">
     <div class="card-body">
@@ -18,10 +19,23 @@
 
 <div class="card">
     <div class="card-body">
-        <h3 class="card-title">Parameter State Change Parent</h3>
+        <h3 class="card-title">Event Callback Parent</h3>
 
         <ChildWithEventCallback 
             ParameterFromParent="ComplexObjectInParent"
             DelegateToCallWhenSomethingChanges="StateHasChanged"></ChildWithEventCallback>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Bind Parent</h3>
+        
+        <p>
+            The name of the binding must match the name of the parameter in the child component.
+            e.g. @@bind-TheNameOfTheParameterDeclaredInTheChildGoesHere
+        </p>
+
+        <ChildWithBind @bind-InputParameterFromParent="AnotherParentSimpleParameter"></ChildWithBind>
     </div>
 </div>

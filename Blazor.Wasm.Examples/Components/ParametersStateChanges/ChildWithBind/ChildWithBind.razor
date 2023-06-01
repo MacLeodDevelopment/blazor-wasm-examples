@@ -1,0 +1,19 @@
+﻿@inherits ChildWithBindComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Child with Bind</h3>
+        
+        <p>You can achieve the same effect as an Event Callback with a @@bind directive.
+            The net effect is less code and easier to understand components.
+        </p>
+
+        <h4>@InputParameterFromParent</h4>
+        
+        <div class="card-body">
+            <button @onclick="ModifyParameterFromChild" type="button" class="btn btn-primary">
+                Modify the Parameter from the CHILD Component with a BOUND callback.
+            </button>
+        </div>
+    </div>
+</div>
