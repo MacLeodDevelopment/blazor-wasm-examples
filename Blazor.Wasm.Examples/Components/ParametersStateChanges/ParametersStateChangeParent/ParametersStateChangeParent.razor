@@ -1,2 +1,27 @@
-﻿TODO AMACLEOD CONTINUE FROM DETECT CHANGES HERE
-https://blazorschool.com/tutorial/blazor-wasm/dotnet7/parameter-173533
+﻿@inherits ParametersStateChangeParentComponent 
+@using Blazor.Wasm.Examples.Components.ParametersStateChanges.ParametersStateChangeChild 
+@using Blazor.Wasm.Examples.Components.ParametersStateChanges.ChildWithEventCallback
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Parameter State Change Parent</h3>
+
+        <ParametersStateChangeChild SimpleParameterFromParent="@ParentSimpleParameter"></ParametersStateChangeChild>
+
+        <div class="card-body">
+            <button @onclick="ModifyParameterFromParentAsync" type="button" class="btn btn-primary">
+                Modify the Parameter from the Parent Component
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Parameter State Change Parent</h3>
+
+        <ChildWithEventCallback 
+            ParameterFromParent="ComplexObjectInParent"
+            DelegateToCallWhenSomethingChanges="StateHasChanged"></ChildWithEventCallback>
+    </div>
+</div>

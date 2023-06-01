@@ -1,0 +1,15 @@
+﻿@inherits ChildWithEventCallbackComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Child with Event Callback</h3>
+
+        <h4>@ParameterFromParent?.Data</h4>
+        
+        <div class="card-body">
+            <button @onclick="ModifyParameterFromChild" type="button" class="btn btn-primary">
+                Modify the Parameter from the CHILD Component with an Event Callback
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 ﻿@page "/parameters-state-changes"
-@using Blazor.Wasm.Examples.Components.ParametersStateChanges
+@using Blazor.Wasm.Examples.Components.ParametersStateChanges.ParametersStateChangeParent
 
 <PageTitle>Parameters State Changes</PageTitle>
 
@@ -13,6 +13,7 @@
         </li>
         <li>
             Changes to state from a CHILD component will NOT cause the parent to be re-rendered automatically.
+            These must use an EventCallBack or the bind directive @@bind. 
         </li>
     </ul>
 
