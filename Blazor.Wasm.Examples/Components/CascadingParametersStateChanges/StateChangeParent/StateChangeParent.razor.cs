@@ -1,7 +1,7 @@
 ﻿using Blazor.Wasm.Examples.Domain;
 using Microsoft.AspNetCore.Components;
 
-namespace Blazor.Wasm.Examples.Components.StateChanges.StateChangeParent;
+namespace Blazor.Wasm.Examples.Components.CascadingParametersStateChanges.StateChangeParent;
 
 public class StateChangeParentComponent : ComponentBase
 {

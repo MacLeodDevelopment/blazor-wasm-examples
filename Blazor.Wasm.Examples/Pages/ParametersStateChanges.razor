@@ -1,0 +1,23 @@
+﻿@page "/parameters-state-changes"
+@using Blazor.Wasm.Examples.Components.ParametersStateChanges
+
+<PageTitle>Parameters State Changes</PageTitle>
+
+<h1>Parameters State Changes</h1>
+
+<p>
+    This page demonstrates how component state using parameters is updated. 
+    <ul>
+        <li>
+            Changes to state from a PARENT component will cause the child to be re-rendered automatically.
+        </li>
+        <li>
+            Changes to state from a CHILD component will NOT cause the parent to be re-rendered automatically.
+        </li>
+    </ul>
+
+</p>
+
+<hr/>
+
+<ParametersStateChangeParent></ParametersStateChangeParent>
