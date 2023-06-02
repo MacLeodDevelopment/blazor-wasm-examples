@@ -1,0 +1,34 @@
+﻿@inherits ParentExampleComponent 
+@using Blazor.Wasm.Examples.Components.ContentProjection.SingleSlot
+@using Blazor.Wasm.Examples.Components.ContentProjection.ExampleChildContent
+@using Blazor.Wasm.Examples.Components.ContentProjection.MultiSlot
+@using Blazor.Wasm.Examples.Components.ContentProjection.GenericExample
+
+<p>NB: You can't have a component named ChildContent (Same as the 
+    @@ChildContent name in Blazor WebAssembly) for this, it fails to render.</p>
+
+@*Child element can be embedded here, like an HTML child element of <SingleSlot>. *@
+<SingleSlot>
+    <ExampleChildContent></ExampleChildContent>
+</SingleSlot>
+
+<MultiSlot>
+    <Slot1>
+        <ExampleChildContent ProjectedParameter="this comes from the Parent Example component."></ExampleChildContent>
+    </Slot1>
+    <Slot2>
+        <span>Example of some content projected from ParentExample component.</span>
+    </Slot2>
+</MultiSlot>
+
+<GenericExample InputData="Animals" Context="OutputFromProjection">
+    <DogTemplate>
+        <div>My name is @OutputFromProjection.Name, I am a dog.</div>
+    </DogTemplate>
+    <CatTemplate>
+        <div>My name is @OutputFromProjection.Name, I am a cat.</div>
+    </CatTemplate>
+    <BirdTemplate>
+        <div>My name is @OutputFromProjection.Name, I am a bird.</div>
+    </BirdTemplate>
+</GenericExample>

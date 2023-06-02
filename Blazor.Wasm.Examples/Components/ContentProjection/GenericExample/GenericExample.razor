@@ -1,0 +1,36 @@
+﻿@using Blazor.Wasm.Examples.Domain
+@inherits GenericExampleComponent 
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Generic Content Projection</h3>
+        
+        <p>
+            Generic projection is useful for shifting responsibility higher up. 
+            It defers the UI to the component which is using the generic.
+        </p>
+
+        <div>
+            @foreach (var animal in InputData)
+            {
+                <div>
+                    @if (animal is Cat cat)
+                    {
+                        @CatTemplate?.Invoke(cat)
+                    }
+
+                    @if (animal is Dog dog)
+                    {
+                        @DogTemplate?.Invoke(dog)
+                    }
+
+                    @if (animal is Bird bird)
+                    {
+                        @BirdTemplate?.Invoke(bird)
+                    }
+                </div>
+            }            
+        </div>
+
+    </div>
+</div>

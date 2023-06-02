@@ -1,0 +1,17 @@
+﻿@inherits SingleSlotComponent 
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Single Slot Content Projection</h3>
+        
+        <p>
+            NB: You cannot change the parameter name of ChildContent.
+            It is a fixed name defined by Blazor WebAssembly.
+        </p>
+
+        <div>
+            @ChildContent
+        </div>
+
+    </div>
+</div>

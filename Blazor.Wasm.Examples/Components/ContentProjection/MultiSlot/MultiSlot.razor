@@ -1,0 +1,29 @@
+﻿@inherits MultiSlotComponent 
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Multi Slot Content Projection</h3>
+
+        <p>
+            Allows many slots for projecting content. Useful for tab containers etc.
+        </p>
+
+        <div>
+            @Slot1
+        </div>
+        
+        <div>
+            @Slot2
+        </div>
+        
+        @if (Slot3 is null)
+        {
+            <div>Default Slot 3</div>
+        }
+        else
+        {
+            @Slot3
+        }
+
+    </div>
+</div>
