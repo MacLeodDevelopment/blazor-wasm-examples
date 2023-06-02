@@ -1,0 +1,31 @@
+﻿@inherits ExampleConsumerComponent 
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Consume Shared State</h3>
+
+        <p>
+            This component demonstrates consumption of a shared state object. 
+        </p>
+
+        <div class="card-body">
+            
+            @if (ExampleTransferService != null)
+            {
+                <div>Received Data: <span class="text-danger">@ExampleTransferService.Data</span></div>
+                <label>
+                    <input type="text" 
+                           @bind="ExampleTransferService.Data" 
+                           @bind:event="oninput"/>
+                </label>   
+
+                <ul>
+                    @foreach (var instance in ExampleTransferService.ExampleInstances)
+                    {
+                        <li>@instance.Data</li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

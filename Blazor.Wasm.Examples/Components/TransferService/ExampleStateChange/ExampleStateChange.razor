@@ -1,0 +1,25 @@
+﻿@inherits ExampleStateChangeComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Example State Change</h3>
+
+        <p>
+            This component modifies shared state. 
+            Note that it does not reflect updates made in ExampleConsumer.
+            This is because there is no subscription to the Data Changed event, and no call to invoke StateHasChanged();
+        </p>
+
+        <div class="card-body">
+            <div>Number of instances: <span class="text-danger">@ExampleTransferService?.ExampleInstances.Count</span></div>
+            <button class="btn btn-primary" type="button" @onclick="AddSomethingToSharedState">Add To Shared State</button>
+
+            <div>Received Data: <span class="text-danger">@ExampleTransferService?.Data</span></div>
+
+            <input type="text"
+                @bind-value="@ExampleTransferService!.Data"
+                @bind-value:event="oninput" />
+
+        </div>
+    </div>
+</div>
