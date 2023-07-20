@@ -1,0 +1,23 @@
+﻿@inherits WrapperInConsumingAppComponent
+@using Blazor.Wasm.Examples.Components.GenericCallbackExample.GenericCallback
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Generic Callback</h3>
+        <p>
+            This component implements an interface defined in what would be the component library.
+            It then passes itself to the child as a cascading parameter. 
+            The child then invokes the callback defined by the interface but implemented by this component.
+            This way, the child knows nothing about the "consuming" application. 
+        </p>
+        
+        <h5>@SomeDataSentBackToMe</h5>
+
+        <CascadingValue Name="ExpectsAComponentImplementingThisInterface" Value="this">
+            <GenericCallback></GenericCallback>
+        </CascadingValue>
+
+    </div>
+</div>
+
+

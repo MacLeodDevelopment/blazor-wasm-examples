@@ -1,0 +1,16 @@
+﻿@inherits GenericCallbackComponent
+
+<div class="card">
+    <div class="card-body">
+        <h3 class="card-title">Generic Callback</h3>
+        <p>
+            This component demonstrates a generic callback method being passed in to a component
+            which knows nothing about the specifics of the callback.
+        </p>
+        
+        <button @onclick="InvokeCallbackAsync" type="button" class="btn btn-primary">
+            Invoke the Callback and Pass Some Data
+        </button>
+
+    </div>
+</div>
